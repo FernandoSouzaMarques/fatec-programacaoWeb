@@ -7,9 +7,15 @@ const schema = mongoose.Schema({
     },
     duracao_meses: {
         type: Number,
-        required: true
+        required: true,
+        default: 6
     },
     carga_horaria: {
+        type: Number,
+        required: true,
+        default: 96
+    },
+    valor_total: {
         type: Number,
         required: true
     }

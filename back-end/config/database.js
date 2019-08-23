@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
 module.exports = function(uri) {
-	mongoose.connect(uri);
+	mongoose.connect(uri, { useNewUrlParser: true});
+
+	mongoose.set('useFindAndModify', false);
 
 	mongoose.connection.on('connected' , () => {
 		console.log('Mongoose! conectado a ' + uri);
