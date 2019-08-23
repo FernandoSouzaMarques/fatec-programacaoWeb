@@ -6,6 +6,7 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const curso = require('./routes/curso');
+const professor = require('./routes/professor');
 
 var app = express();
 
@@ -22,5 +23,6 @@ database('mongodb://localhost:27017/programacao-web');
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/curso', curso);
+app.use('/professor', professor);
 
 module.exports = app;
