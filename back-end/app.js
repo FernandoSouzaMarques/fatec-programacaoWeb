@@ -8,6 +8,9 @@ const usersRouter = require('./routes/users');
 const curso = require('./routes/curso');
 const professor = require('./routes/professor');
 const turma = require('./routes/turma');
+const aluno = require('./routes/aluno');
+const avaliacao = require('./routes/avaliacao');
+const nota = require('./routes/nota');
 
 var app = express();
 
@@ -26,5 +29,8 @@ app.use('/users', usersRouter);
 app.use('/curso', curso);
 app.use('/professor', professor);
 app.use('/turma', turma);
+app.use('/aluno', aluno);
+app.use('/avaliacao', avaliacao);
+app.use('/nota', nota);
 
 module.exports = app;

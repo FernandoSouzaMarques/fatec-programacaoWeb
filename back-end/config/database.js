@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 module.exports = function(uri) {
-	mongoose.connect(uri, { useNewUrlParser: true});
+	mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true});
 
 	mongoose.set('useFindAndModify', false);
 
