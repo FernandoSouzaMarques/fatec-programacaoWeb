@@ -13,6 +13,8 @@ const avaliacao = require('./routes/avaliacao');
 const nota = require('./routes/nota');
 
 var app = express();
+const cors = require('cors');
+app.use(cors());
 
 app.use(logger('dev'));
 app.use(express.json());
