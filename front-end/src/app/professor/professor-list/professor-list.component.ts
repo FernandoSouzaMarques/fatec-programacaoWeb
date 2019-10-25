@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProfessorService } from '../professor.service';
 import { MatDialog } from '@angular/material';
 import { ConfirmDlgComponent } from '../../ui/confirm-dlg/confirm-dlg.component';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-professor-list',
@@ -12,7 +13,9 @@ export class ProfessorListComponent implements OnInit {
 
   constructor(
     private professorSrv: ProfessorService,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog,
+    private snackBar: MatSnackBar
+  ) { }
 
   professores: any = [];
   displayedColumns: string[] = ['nome', 'telefone', 'email', 'editar', 'excluir'];
@@ -53,12 +56,17 @@ export class ProfessorListComponent implements OnInit {
       if (result) {
         await  this.professorSrv.excluir(id);
         this.ngOnInit(); //Força o recarregamento da lista de professores
+        this.snackBar.open('Professor Excluido com sucesso 😃!', 'Ok', {
+          duration: 4000,
+        });
       }
 
     }
     catch(erro) {
       console.error(erro);
-      alert('Erro ao excluir!');
+      this.snackBar.open('Não foi possível excluir o professor 😥! Entre em contato com o suporte técnico.', 'Ok', {
+        duration: 4000,
+      })
     }
   }
 
