@@ -13,6 +13,9 @@ import { FormsModule } from '@angular/forms';
 import { ProfessorListComponent } from './professor/professor-list/professor-list.component';
 import { ConfirmDlgComponent } from './ui/confirm-dlg/confirm-dlg.component';
 import { MatDialogModule } from '@angular/material';
+import { HomeComponent } from './home/home.component';
+import { ProfessorFormComponent } from './professor/professor-form/professor-form.component';
+import {NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { MatDialogModule } from '@angular/material';
     AppMenuComponent,
     AppFooterComponent,
     ProfessorListComponent,
-    ConfirmDlgComponent
+    ConfirmDlgComponent,
+    HomeComponent,
+    ProfessorFormComponent
   ],
   imports: [
     HttpClientModule,
@@ -30,7 +35,8 @@ import { MatDialogModule } from '@angular/material';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    MatDialogModule
+    MatDialogModule,
+    NgxMaskModule.forRoot()
   ],
   entryComponents: [
     ConfirmDlgComponent
@@ -38,4 +44,5 @@ import { MatDialogModule } from '@angular/material';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

@@ -7,6 +7,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .h-cnt {
     padding: 0 50px;
+    overflow: hidden;
 }
 
 .a-title {
@@ -41,4 +42,26 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .mat-row:hover {
     background-color: rgba($color: #3f51b5, $alpha: 0.2);
+}
+
+.action-new {
+    background: transparent;
+    padding: 0;
+}
+
+.action-new .mat-raised-button {
+    font-size: 125%;
+    padding: 8px 16px;
+}
+
+.form-professor {
+    min-width: 150px;
+    max-width: 500px;
+}
+
+.form-professor .mat-form-field {
+    width: 100%;
+    & textarea {
+        resize: none;
+    }
 }

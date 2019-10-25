@@ -1,5 +1,14 @@
 <h1 class="a-title">Lista de Professores</h1>
 
+<mat-toolbar class="action-new">
+    <mat-toolbar-row>
+        <a mat-raised-button color="accent" [routerLink]="['/professor/novo']">
+            <mat-icon>add-circle</mat-icon>
+            Novo professor
+        </a>
+    </mat-toolbar-row>
+</mat-toolbar>
+
 <table mat-table [dataSource]="professores" class="mat-elevation-z8 a-table">
 
     <!--- Note that these columns can be defined in any order.
@@ -28,9 +37,9 @@
     <ng-container matColumnDef="editar">
         <th mat-header-cell *matHeaderCellDef class="a-table-header"> Editar </th>
         <td mat-cell *matCellDef="let professor">
-            <button mat-raised-button color="primary" class="a-btn-list" title="Clique aqui para editar">
+            <a mat-raised-button color="accent" title="Editar" class="a-btn-list" [routerLink]="['/professor', professor._id]">
                 <mat-icon>edit</mat-icon>
-            </button>
+            </a>
         </td>
     </ng-container>
 

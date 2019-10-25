@@ -1,0 +1,20 @@
+<h1>{{ title }}</h1>
+
+<form action="" class="form-professor">
+    <mat-form-field>
+        <input matInput placeholder="Nome completo" required [(ngModel)]="professor.nome">
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput placeholder="Formação" [(ngModel)]="professor.formacao" row="4"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput placeholder="Endereço completo" [(ngModel)]="professor.endereco" row="2"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Telefone para contato" mask="(00) 000000009" required [(ngModel)]="professor.nome">
+    </mat-form-field>
+    
+</form>
