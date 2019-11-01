@@ -11,7 +11,7 @@ controller.novo = async (req, res) => {
    catch(erro) {
        console.error(erro);
        //HTTP 500: Internal Server Error
-       res.sendStatus(500);
+       res.send('').sendStatus(500);
    }
 }
 
@@ -51,7 +51,7 @@ controller.atualizar = async (req, res) => {
         const id = req.body._id;
         const modificado = await Turma.findOneAndUpdate({_id: id}, req.body);
 
-        if(modificado) res.sendStatus(204);
+        if(modificado) res.send('').sendStatus(204);
         else res.sendStatus(404);
     }
     catch(error) {

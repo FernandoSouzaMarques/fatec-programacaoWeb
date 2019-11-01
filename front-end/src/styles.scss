@@ -6,62 +6,96 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @import "~material-design-icons/iconfont/material-icons.css";
 
 .h-cnt {
-    padding: 0 50px;
-    overflow: hidden;
+	padding: 0 50px;
+	overflow: hidden;
 }
 
 .a-title {
-    font-size: 34px;
-    color: #3f51b5;
-    margin: 10px 0 0;
-    position: relative;
+	font-size: 34px;
+	color: #3f51b5;
+	margin: 10px 0 0;
+	position: relative;
 }
 
 .a-table {
-    width: 100%;
-    margin: 30px auto 0;
+	width: 100%;
+	margin: 30px auto 0;
 }
 
 .a-table-header {
-    color: #3f51b5;
-    font-size: 16px;
-    font-weight: bold;
+	color: #3f51b5;
+	font-size: 16px;
+	font-weight: bold;
 }
 
 .a-table-header.email {
-    width: 30%;
+	width: 30%;
 }
 
 .a-btn-list {
-    visibility: hidden;
+	visibility: hidden;
 }
 
 .mat-row:hover .a-btn-list {
-    visibility: visible;
+	visibility: visible;
 }
 
 .mat-row:hover {
-    background-color: rgba($color: #3f51b5, $alpha: 0.2);
+	background-color: rgba($color: #3f51b5, $alpha: 0.2);
 }
 
 .action-new {
-    background: transparent;
-    padding: 0;
+	background: transparent;
+	padding: 0;
 }
 
 .action-new .mat-raised-button {
-    font-size: 125%;
-    padding: 8px 16px;
+	font-size: 125%;
+	padding: 8px 16px;
 }
 
 .form-professor {
-    min-width: 150px;
-    max-width: 500px;
+	min-width: 150px;
+	max-width: 900px;
+	margin-bottom: 70px;
+	border: solid 2px #3f51b5;
+	border-radius: 20px;
+	padding: 20px;
+	box-sizing: border-box;
+	margin: 0 auto;
 }
 
 .form-professor .mat-form-field {
-    width: 100%;
-    & textarea {
-        resize: none;
-    }
+	width: calc(50% - 20px);
+
+	&:nth-child(odd) {
+		margin-right: 20px;
+	}
+
+	&:nth-child(9) {
+		margin-right: 0;
+		width: 100%;
+	}
+
+	& textarea {
+		resize: none;
+	}
+
+	& input {
+		padding-bottom: 18px;
+	}
+}
+
+.form-actions {
+	background: transparent;
+
+	& mat-toolbar-row {
+		display: flex;
+		justify-content: space-around;
+	}
+}
+
+.opacity-none {
+	display: none;
+	opacity: 0;
 }
