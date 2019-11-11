@@ -11,11 +11,11 @@ const schema = mongoose.Schema({
         enum: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
     },
     horario_inicial: {
-        type: Date,
+        type: String,
         required: true
     },
     horario_final: {
-        type: Date,
+        type: String,
         required: true
     },
     data_inicial: {

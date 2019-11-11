@@ -17,7 +17,7 @@ controller.novo = async (req, res) => {
 
 controller.listar = async (req, res) => {
     try {
-        const professores = await Professor.find();
+        const professores = await Professor.find().sort('nome');
         res.send(professores);
     }
     catch(erro) {

@@ -1,1 +1,54 @@
-<p>turma-form works!</p>
+<h1 class="a-title">{{ title }}</h1>
+
+<form action="" class="form-new" #f="ngForm" (ngSubmit)="salvar(f)">
+    
+    <mat-form-field>
+        <input matInput name="nome" required placeholder="Nome da turma" [(ngModel)]="turma.nome">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select name="professor" required placeholder="Professor da turma" [(ngModel)]="turma.professor">
+            <mat-option *ngFor="let professor of professores" [value]="professor._id">{{professor.nome}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select name="curso" required placeholder="Curso da turma" [(ngModel)]="turma.curso">
+            <mat-option *ngFor="let curso of cursos" [value]="curso._id">{{curso.nome}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select name="dia_semana" required placeholder="Dia da semana" [(ngModel)]="turma.dia_semana">
+            <mat-option *ngFor="let diaSemana of diasSemana" [value]="diaSemana._id">{{diaSemana.nome}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput name="horario_inicial" required placeholder="Horário inicial" [(ngModel)]="turma.horario_inicial" mask="Hh:m0">
+    </mat-form-field>
+    
+    <mat-form-field>
+        <input matInput name="horario_final" required placeholder="Horário final" [(ngModel)]="turma.horario_final" mask="Hh:m0">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input name="data_inicial" matInput [matDatepicker]="data_inicial" placeholder="Data inicial" required [(ngModel)]="turma.data_inicial">
+        <mat-datepicker-toggle matSuffix [for]="data_inicial"></mat-datepicker-toggle>
+        <mat-datepicker #data_inicial></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input name="data_final" matInput [matDatepicker]="data_final" placeholder="Data final" required [(ngModel)]="turma.data_final">
+        <mat-datepicker-toggle matSuffix [for]="data_final"></mat-datepicker-toggle>
+        <mat-datepicker #data_final></mat-datepicker>
+    </mat-form-field>
+
+    <mat-toolbar class="form-actions">
+        <mat-toolbar-row>
+            <button mat-raised-button type="submit" color="accent">Salvar</button>
+            <button mat-raised-button (click)="voltar(f)">Voltar</button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    
+</form>

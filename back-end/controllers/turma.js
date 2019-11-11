@@ -6,7 +6,8 @@ controller.novo = async (req, res) => {
    try {
         await Turma.create(req.body);
         //HTTP 201: Created
-        res.sendStatus(201);
+        //res.sendStatus(201).send('');
+        res.status(201).send('');
    }
    catch(erro) {
        console.error(erro);

@@ -54,7 +54,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 	padding: 8px 16px;
 }
 
-.form-professor {
+.form-new {
 	min-width: 150px;
 	max-width: 900px;
 	margin-bottom: 70px;
@@ -65,14 +65,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 	margin: 0 auto;
 }
 
-.form-professor .mat-form-field {
+.form-new .mat-form-field {
 	width: calc(50% - 20px);
 
 	&:nth-child(odd) {
 		margin-right: 20px;
 	}
 
-	&:nth-child(9) {
+	&.last-child {
 		margin-right: 0;
 		width: 100%;
 	}
@@ -81,8 +81,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 		resize: none;
 	}
 
-	& input {
+	& input,
+	.mat-select {
 		padding-bottom: 18px;
+		vertical-align: bottom;
 	}
 }
 

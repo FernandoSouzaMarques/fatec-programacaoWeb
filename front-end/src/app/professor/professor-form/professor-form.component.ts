@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProfessorService } from '../professor.service';
+import { ConfirmDlgComponent } from 'src/app/ui/confirm-dlg/confirm-dlg.component';
 
 @Component({
   selector: 'app-professor-form',
@@ -14,6 +16,7 @@ export class ProfessorFormComponent implements OnInit {
   constructor(
     private professorSrv: ProfessorService,
     private router: Router,
+    private dialog: MatDialog,
     private actRoute: ActivatedRoute,
     private snackBar: MatSnackBar,
   ) { }
@@ -56,6 +59,29 @@ export class ProfessorFormComponent implements OnInit {
         })
         
       }
+    }
+  }
+
+  async voltar(form: NgForm) {
+    //form.dirty -> o formulário foi alterado via código (está "sujo");
+    //form.touched -> o formulário foi alterado pelo usuário;
+    let result = true;
+    if (form.dirty && form.touched) {
+      try {
+        const dialogRef = this.dialog.open(ConfirmDlgComponent, {
+          width: '50%',
+          data: {question: 'Há dados não salvos. Deseja realmente voltar?'}
+        });
+
+        result = await dialogRef.afterClosed().toPromise();
+      }
+      catch(error) {
+        console.error(error);
+      }
+    }
+
+    if (result) {
+      this.router.navigate(['/professor']);
     }
   }
 }

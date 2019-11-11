@@ -1,6 +1,6 @@
 <h1>{{ title }}</h1>
 
-<form action="" class="form-professor" #f="ngForm" (ngSubmit)="salvar(f)">
+<form action="" class="form-new" #f="ngForm" (ngSubmit)="salvar(f)">
     <mat-form-field>
         <input name="nome" matInput placeholder="Nome completo" required [(ngModel)]="professor.nome">
     </mat-form-field>
@@ -36,14 +36,14 @@
         <mat-icon matPrefix>attach_money</mat-icon>
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field class="last-child">
         <input name="email" matInput placeholder="E-mail" type="email" required [(ngModel)]="professor.email">
     </mat-form-field>
 
     <mat-toolbar class="form-actions">
         <mat-toolbar-row>
             <button mat-raised-button type="submit" color="accent">Salvar</button>
-            <button mat-raised-button>Voltar</button>
+            <button mat-raised-button (click)="voltar(f)">Voltar</button>
         </mat-toolbar-row>
     </mat-toolbar>
     
